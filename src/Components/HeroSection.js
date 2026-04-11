@@ -69,7 +69,7 @@ export default function HeroSection() {
           {/* Title */}
           <h1 className="text-3xl md:text-5xl font-bold font-serif text-[#181c2a] text-center mb-4 leading-tight animate-fadeIn">
             Welcome to{" "}
-            <span className="text-[#1777fa]">Immigration Options 4 U</span>
+            <span className="text-[#1777fa] font-serif">Immigration Options 4 U</span>
             <br className="hidden md:block" />
             <span className="block text-xl md:text-2xl font-semibold text-[#181c2a] mt-3 font-serif">
               {content.title}
@@ -81,7 +81,7 @@ export default function HeroSection() {
           </p>
           {/* Info / About */}
           <p className="text-base md:text-lg text-[#696d78] text-center mb-8 max-w-2xl animate-fadeIn delay-200">
-            <span className="font-bold text-[#1777fa]">
+            <span className="font-bold text-[#1777fa] font-serif">
               Immigration Options 4 U
             </span>{" "}
             -{" "}
