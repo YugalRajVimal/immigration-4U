@@ -1,5 +1,5 @@
 // FooterWithContact.jsx
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaInstagram,
   FaFacebookF,
@@ -9,7 +9,73 @@ import {
   FaArrowUp,
 } from "react-icons/fa";
 
+const FOOTER_CONTENT = {
+  DUBAI: {
+    mainHeading: "Let's",
+    mainHeadingHighlight: "connect",
+    mainHeadingEnd: "and collaborate",
+    ctaButtonText: "Get started now",
+    formIntro:
+      "Feel free to get in touch or visit our Dubai location.",
+    primaryCountry: "Dubai",
+    selectOptions: ["Consult", "Collaboration", "Other"],
+  },
+  HUNGARY: {
+    mainHeading: "Let's",
+    mainHeadingHighlight: "build",
+    mainHeadingEnd: "your European dream",
+    ctaButtonText: "Start your residency journey",
+    formIntro:
+      "Feel free to get in touch or visit our Budapest office.",
+    primaryCountry: "Hungary",
+    selectOptions: ["Investment Inquiry", "Residency Consultation", "Other"],
+  },
+  UK: {
+    mainHeading: "Let's",
+    mainHeadingHighlight: "achieve",
+    mainHeadingEnd: "your UK goals",
+    ctaButtonText: "Begin your journey",
+    formIntro:
+      "Feel free to get in touch or visit our London office.",
+    primaryCountry: "United Kingdom (UK)",
+    selectOptions: ["Business Immigration", "Family Visa", "Other"],
+  },
+};
+
+const ALL_CONTACTS = {
+  "United Kingdom (UK)": {
+    address: "First Floor, 30 High Road, Wood Green, London N22 6BX.",
+    country: "United Kingdom (UK)",
+  },
+  Hungary: {
+    address: "1114 Budapest, Meszoly Utca 4.a;.1",
+    country: "Hungary",
+  },
+  Dubai: {
+    address:
+      "17th Floor Fahidi Heights, (Near Four Points Sheraton Hotel) Bur Dubai, Dubai. UAE.",
+    country: "Dubai",
+  },
+};
+
 export default function FooterWithContact() {
+  const [preferredCountry, setPreferredCountry] = useState("DUBAI");
+
+  useEffect(() => {
+    const item = localStorage.getItem("preferred_country") || "DUBAI";
+    setPreferredCountry(item);
+  }, []);
+
+  const content = FOOTER_CONTENT[preferredCountry] || FOOTER_CONTENT.DUBAI;
+
+  // Sort contacts to show primary country first
+  const primaryContactKey = content.primaryCountry;
+  const sortedContacts = Object.entries(ALL_CONTACTS).sort(([key1], [key2]) => {
+    if (key1 === primaryContactKey) return -1;
+    if (key2 === primaryContactKey) return 1;
+    return 0;
+  });
+
   return (
     <footer
       id="contact"
@@ -20,13 +86,14 @@ export default function FooterWithContact() {
         <div className="flex-1 px-8 py-12 flex flex-col justify-between">
           <div>
             <h2 className="text-5xl md:text-6xl font-bold mb-8 mt-4 text-white leading-tight">
-              Let’s <span className="text-[#1e82fd]">connect</span>
+              {content.mainHeading}{" "}
+              <span className="text-[#1e82fd]">{content.mainHeadingHighlight}</span>
               <br />
-              and collaborate
+              {content.mainHeadingEnd}
             </h2>
             <button className="mt-5 flex items-center gap-2 bg-[#1e82fd] text-white py-3 px-7 rounded-full font-semibold text-lg shadow">
               <FaArrowRight className="mr-2" />
-              Get started now
+              {content.ctaButtonText}
             </button>
           </div>
           {/* Contact Details Section */}
@@ -35,31 +102,26 @@ export default function FooterWithContact() {
               Contact Details:
             </h3>
             <div className="flex flex-col gap-7">
-              <div>
-                <h4 className="font-semibold text-gray-400 mb-1">
-                  United Kingdom (UK)
-                </h4>
-                <p className="text-sm text-gray-300 mb-1">
-                  First Floor, 30 High Road,
-                  <br />
-                  Wood Green, London N22 6BX.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-400 mb-1">Hungary</h4>
-                <p className="text-sm text-gray-300 mb-1">
-                  1114 Budapest <br />
-                  Meszoly Utca 4.a;.1
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-400 mb-1">Dubai</h4>
-                <p className="text-sm text-gray-300 mb-1">
-                  17th Floor Fahidi Heights, (Near Four Points Sheraton Hotel)
-                  <br />
-                  Bur Dubai, Dubai. UAE.
-                </p>
-              </div>
+              {sortedContacts.map(([key, contact], index) => (
+                <div
+                  key={index}
+                  className={
+                    contact.country === primaryContactKey
+                      ? "bg-[#1e82fd] bg-opacity-10 p-4 rounded-lg border border-[#1e82fd] border-opacity-30"
+                      : ""
+                  }
+                >
+                  <h4 className="font-semibold text-gray-400 mb-1">
+                    {contact.country}
+                    {contact.country === primaryContactKey && (
+                      <span className="text-[#1e82fd] ml-2">(Primary)</span>
+                    )}
+                  </h4>
+                  <p className="text-sm text-gray-300 mb-1">
+                    {contact.address}
+                  </p>
+                </div>
+              ))}
               <div>
                 <h4 className="font-semibold text-gray-400 mb-1">Email</h4>
                 <a
@@ -77,9 +139,7 @@ export default function FooterWithContact() {
         <div className="flex-1 bg-[#232b39] rounded-bl-3xl px-8 py-12 flex flex-col justify-center">
           <form className="w-full max-w-2xl mx-auto">
             <h4 className="text-xl font-semibold mb-7 text-white">
-              Feel free to get in touch or
-              <br />
-              visit our location.
+              {content.formIntro}
             </h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
@@ -117,16 +177,18 @@ export default function FooterWithContact() {
               </div>
               <div>
                 <label className="block mb-2 text-sm font-semibold">
-                  Chose a option
+                  Choose a option
                 </label>
                 <select
                   className="w-full bg-transparent border-b-2 border-[#2e3951] text-white py-3 px-2 focus:outline-none"
                   required
                 >
                   <option value="">Select...</option>
-                  <option value="Consult">Consult</option>
-                  <option value="Collab">Collaboration</option>
-                  <option value="Other">Other</option>
+                  {content.selectOptions.map((option, index) => (
+                    <option key={index} value={option}>
+                      {option}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>
@@ -178,7 +240,11 @@ export default function FooterWithContact() {
         </div>
 
         {/* Up arrow floating button */}
-        <button className="fixed bottom-16 right-8 z-50 bg-[#1e82fd] w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:bg-[#1766ba] transition">
+        <button
+          className="fixed bottom-16 right-8 z-50 bg-[#1e82fd] w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:bg-[#1766ba] transition"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Scroll to top"
+        >
           <FaArrowUp className="text-white text-2xl" />
         </button>
       </div>
@@ -189,15 +255,15 @@ export default function FooterWithContact() {
           <span className="font-semibold text-white">
             Immigration Options 4 U
           </span>{" "}
-          All rights reserved. 
+          All rights reserved.
         </div>
         <div className="flex flex-col md:flex-row gap-1 md:gap-3 items-center">
-          <span>Policy & privacy &nbsp;•&nbsp; Terms & conditions</span>
-          <span className="hidden md:inline">|</span>
+          {/* <span>Policy & privacy &nbsp;•&nbsp; Terms & conditions</span> */}
+          {/* <span className="hidden md:inline">|</span> */}
           <span>
             Made with passion by{" "}
             <a
-              href="https://gowappily.com"
+              href="https://gowappily.in"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#1e82fd] hover:underline font-semibold"

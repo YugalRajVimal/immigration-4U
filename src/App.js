@@ -1,33 +1,49 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import NavBar from "./Components/NavBar";
-import HeroSection from "./Components/HeroSection";
-
-import CurvedInfiniteMarquee from "./Components/AnimatedMarquee";
-import CurvedSwiperMarquee from "./Components/AnimatedMarquee";
-import CurvedSlider from "./Components/AnimatedMarquee";
-import BusinessConsultingHero from "./Components/BusinessConsultingHero";
-import ServiceCarousel from "./Components/ServiceCarousel";
-import AlternateCards from "./Components/AlternateCards";
-import TeamSection from "./Components/TeamSection";
 import FooterWithContact from "./Components/Footer";
+import AboutUsPage from "./Pages/AboutUsPage";
+import ServicesSection from "./Pages/ServicesPage";
+import ContactPage from "./Pages/ContactUsPage";
+import HomePage from "./Pages/HomePage";
+import WelcomePage from "./Pages/WelcomePage";
 
+const LayoutWrapper = ({ children }) => {
+  const location = useLocation();
+
+  // Show NavBar and Footer on all pages except Welcome Page ("/")
+  const hideLayout = location.pathname === "/";
+
+  return (
+    <>
+      {!hideLayout && <NavBar />}
+      {children}
+      {!hideLayout && <FooterWithContact />}
+    </>
+  );
+};
+
+// Main App with Router
 const App = () => {
   return (
-    <div>
-      <NavBar />
-      <HeroSection />
-      <CurvedSlider />
-      {/* Why Dubai */}
-      <BusinessConsultingHero />
-      {/* What We Offer  */}
-      <AlternateCards />
-      {/* Services  */}
-      <ServiceCarousel />
-      {/* Team
-       */}
-      <TeamSection />
-      <FooterWithContact />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<WelcomePage />} />
+        <Route
+          path="*"
+          element={
+            <LayoutWrapper>
+              <Routes>
+                <Route path="/home" element={<HomePage />} />
+                <Route path="/about" element={<AboutUsPage />} />
+                <Route path="/services" element={<ServicesSection />} />
+                <Route path="/contact" element={<ContactPage />} />
+              </Routes>
+            </LayoutWrapper>
+          }
+        />
+      </Routes>
+    </Router>
   );
 };
 
