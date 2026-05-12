@@ -9,6 +9,7 @@ import TailormadePackages from "../Components/TailormadePackages";
 import RegistrationJourney from "../Components/ResistrationJourney";
 import ClientExperiences from "../Components/ClientExp";
 import TeamSection from "../Components/TeamSection";
+import { EUAdvantages2, HeroSection2, OurContribution2, PathwaysSlider2 } from "../Components/NewComp";
 
 const HomePage = () => {
   // Store preferred country from localStorage in state, if present
@@ -27,7 +28,11 @@ const HomePage = () => {
 
   return (
     <div>
-      <HeroSection />
+      <HeroSection2 />
+      <EUAdvantages2/>
+      <OurContribution2/>
+      <PathwaysSlider2/>
+      {/* <HeroSection /> */}
       <CurvedSlider />
       {/* Why Dubai */}
       <BusinessConsultingHero />
@@ -37,7 +42,7 @@ const HomePage = () => {
       <ServiceCarousel />
       <TailormadePackages />
       <RegistrationJourney />
-      <ClientExperiences />
+      {/* <ClientExperiences /> */}
       {/* Team */}
       <TeamSection />
     </div>

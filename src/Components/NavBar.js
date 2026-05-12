@@ -9,33 +9,63 @@ import {
 import clsx from "clsx";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
+// Option nav links - fully specified for country menu
+const countryDropdownList = [
+  { key: "austria", label: "Austria", to: "/country/austria" },
+  { key: "belgium", label: "Belgium", to: "/country/belgium" },
+  { key: "bulgaria", label: "Bulgaria", to: "/country/bulgaria" },
+  { key: "cyprus", label: "Cyprus", to: "/country/cyprus" },
+  { key: "czech-republic", label: "Czech Republic", to: "/country/czech-republic" },
+  { key: "germany", label: "Germany", to: "/country/germany" },
+  { key: "hungary", label: "Hungary", to: "/country/hungary" },
+  { key: "norway", label: "Norway", to: "/country/norway" },
+  { key: "portugal", label: "Portugal", to: "/country/portugal" },
+  { key: "spain", label: "Spain", to: "/country/spain" },
+  { key: "switzerland", label: "Switzerland", to: "/country/switzerland" },
+  { key: "united-kingdom", label: "United Kingdom", to: "/country/united-kingdom" },
+  { key: "dubai", label: "Dubai", to: "/country/dubai" },
+  
+];
+
+// Navigation links config
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
   { label: "Services", to: "/services" },
+  // Insert Immigration Options with drop down
+  {
+    label: "Immigration Options",
+    to: "#immigration-options",
+    dropdown: [
+      { label: "Investment", to: "/investment" },
+      { label: "Business", to: "/business" },
+      { label: "Employment", to: "/employment" },
+    ],
+  },
   { label: "Contact", to: "/contact" },
 ];
 
+// Country selector options (for preferred selector only)
 const COUNTRY_OPTIONS = [
-  {
-    key: "UK",
-    label: "United Kingdom",
-  },
-  {
-    key: "DUBAI",
-    label: "Dubai",
-  },
-  {
-    key: "HUNGARY",
-    label: "Hungary",
-  },
+  { key: "UK", label: "United Kingdom" },
+  { key: "DUBAI", label: "Dubai" },
+  { key: "HUNGARY", label: "Hungary" },
 ];
 
 export default function NavBar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [countryMenuOpen, setCountryMenuOpen] = useState(false);
+  const [immigrationDropdownOpen, setImmigrationDropdownOpen] = useState(false);
+  const [immigrationDropdownMobileOpen, setImmigrationDropdownMobileOpen] = useState(false);
+
+  // For "Option" (country dropdown) Nav Link
+  const [optionDropdownOpen, setOptionDropdownOpen] = useState(false);
+  const [optionDropdownMobileOpen, setOptionDropdownMobileOpen] = useState(false);
+
   const [preferredCountry, setPreferredCountry] = useState("");
   const countryMenuRef = useRef();
+  const immigrationDropdownRef = useRef();
+  const optionDropdownRef = useRef(); // for desktop option dropdown
   const mobileMenuRef = useRef();
   const location = useLocation();
   const navigate = useNavigate();
@@ -61,6 +91,36 @@ export default function NavBar() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, [countryMenuOpen]);
 
+  // Handle click away for immigration dropdown (desktop)
+  useEffect(() => {
+    if (!immigrationDropdownOpen) return;
+    function handleClick(e) {
+      if (
+        immigrationDropdownRef.current &&
+        !immigrationDropdownRef.current.contains(e.target)
+      ) {
+        setImmigrationDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [immigrationDropdownOpen]);
+
+  // Handle click away for Option dropdown (desktop country list)
+  useEffect(() => {
+    if (!optionDropdownOpen) return;
+    function handleClick(e) {
+      if (
+        optionDropdownRef.current &&
+        !optionDropdownRef.current.contains(e.target)
+      ) {
+        setOptionDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [optionDropdownOpen]);
+
   // Handle click away for mobile menu
   useEffect(() => {
     if (!mobileOpen) return;
@@ -84,6 +144,16 @@ export default function NavBar() {
     window.location.reload();
   }
 
+  // Handler for clicking a country in the Option menu (both desktop and mobile)
+  function handleCountryOptionClick(countryTo) {
+    setOptionDropdownOpen(false);
+    setOptionDropdownMobileOpen(false);
+    setMobileOpen(false);
+    if (countryTo?.startsWith("/country/")) {
+      navigate(countryTo);
+    }
+  }
+
   return (
     <header className="w-full shadow-sm bg-[#f8f9fa] py-2 z-50 relative">
       <nav className="mx-auto flex items-center justify-between px-3 sm:px-8 py-2 relative h-[70px] max-w-[1600px]">
@@ -98,13 +168,59 @@ export default function NavBar() {
           <span className="font-bold text-lg md:text-2xl text-[#1d69f4]  font-serif">
             Immigration Options 4U
           </span>
-         
         </div>
 
         {/* Desktop Navigation Links */}
         <ul className="hidden md:flex md:flex-1 items-center justify-center gap-7">
           {navLinks.map((link) =>
-            link.to.startsWith("/") ? (
+            link.dropdown ? (
+              <li
+                key={link.label}
+                className="relative"
+                ref={immigrationDropdownRef}
+                onMouseEnter={() => setImmigrationDropdownOpen(true)}
+                onMouseLeave={() => setImmigrationDropdownOpen(false)}
+              >
+                <button
+                  className={clsx(
+                    "flex items-center gap-1 font-medium text-base transition rounded px-2 py-2 hover:text-[#1d69f4] whitespace-nowrap",
+                    immigrationDropdownOpen
+                      ? "text-[#1d69f4] font-bold"
+                      : "text-[#232839]"
+                  )}
+                  aria-haspopup="true"
+                  aria-expanded={immigrationDropdownOpen}
+                  onClick={() => setImmigrationDropdownOpen((v) => !v)}
+                  type="button"
+                >
+                  {link.label}
+                  <FaChevronDown className="ml-1 text-xs text-[#568edb]" />
+                </button>
+                {immigrationDropdownOpen && (
+                  <ul className="absolute left-0 top-full bg-white shadow-lg border border-[#e4ecfa] rounded-md py-2 min-w-[180px] z-50">
+                    {link.dropdown.map((item) => (
+                      <li key={item.label}>
+                        <Link
+                          to={item.to}
+                          className={clsx(
+                            "block px-4 py-2 text-sm font-medium hover:bg-[#eaf3fd] transition",
+                            location.pathname === item.to
+                              ? "text-[#1d69f4] font-bold"
+                              : "text-[#232839]"
+                          )}
+                          onClick={() => {
+                            setImmigrationDropdownOpen(false);
+                            setMobileOpen(false);
+                          }}
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ) : link.to.startsWith("/") ? (
               <li key={link.label}>
                 <Link
                   to={link.to}
@@ -130,12 +246,55 @@ export default function NavBar() {
               </li>
             )
           )}
+
+          {/* Option Nav Link: Desktop dropdown */}
+          <li
+            className="relative"
+            ref={optionDropdownRef}
+            onMouseEnter={() => setOptionDropdownOpen(true)}
+            onMouseLeave={() => setOptionDropdownOpen(false)}
+          >
+            <button
+              className={clsx(
+                "flex items-center gap-1 font-medium text-base transition rounded px-2 py-2 hover:text-[#1d69f4] whitespace-nowrap",
+                optionDropdownOpen ? "text-[#1d69f4] font-bold" : "text-[#232839]"
+              )}
+              aria-haspopup="true"
+              aria-expanded={optionDropdownOpen}
+              onClick={() => setOptionDropdownOpen((v) => !v)}
+              type="button"
+            >
+              Option
+              <FaChevronDown className="ml-1 text-xs text-[#568edb]" />
+            </button>
+            {optionDropdownOpen && (
+              <ul className="absolute left-0 top-full bg-white shadow-lg border border-[#e4ecfa] rounded-md py-2 min-w-[220px] z-50 max-h-72 overflow-auto">
+                {countryDropdownList.length === 0 ? (
+                  <li className="px-4 py-2 text-sm text-gray-400">No countries found</li>
+                ) : (
+                  countryDropdownList.map((country) => (
+                    <li key={country.key}>
+                      <Link
+                        to={country.to}
+                        className="block w-full text-left px-4 py-2 text-sm font-medium hover:bg-[#eaf3fd] transition text-[#232839]"
+                        onClick={() => {
+                          handleCountryOptionClick(country.to);
+                        }}
+                      >
+                        {country.label}
+                      </Link>
+                    </li>
+                  ))
+                )}
+              </ul>
+            )}
+          </li>
         </ul>
 
         {/* Right Side Actions (desktop + mobile) */}
         <div className="flex flex-1 items-center justify-end gap-1 sm:gap-4 relative">
           {/* Desktop preferred country switcher */}
-          <div className="hidden md:block relative" ref={countryMenuRef}>
+          {/* <div className="hidden md:block relative" ref={countryMenuRef}>
             <button
               className={clsx(
                 "flex items-center gap-1 px-3 py-2 rounded-md border text-[#23386a] bg-white border-[#dbeafd] hover:bg-[#f1f6fb] font-medium shadow-sm transition",
@@ -191,7 +350,7 @@ export default function NavBar() {
                 </li>
               </ul>
             )}
-          </div>
+          </div> */}
 
           {/* Desktop "Get a Quote" button */}
           <button
@@ -256,118 +415,209 @@ export default function NavBar() {
             </button>
           </div>
           <ul className="flex flex-col gap-2 px-4 py-4">
-            {navLinks.map((link) => (
-              <li key={link.label}>
-                {link.to.startsWith("/") ? (
-                  <Link
-                    to={link.to}
+            {navLinks.map((link) =>
+              link.dropdown ? (
+                <li key={link.label} className="relative">
+                  <button
                     className={clsx(
-                      "block px-2 py-2 rounded text-base font-semibold",
-                      location.pathname === link.to
-                        ? "bg-[#e3eeff] text-[#1d69f4]"
+                      "flex w-full items-center gap-1 px-2 py-2 rounded text-base font-semibold text-left",
+                      immigrationDropdownMobileOpen
+                        ? "bg-[#f0f6ff] text-[#1274d6]"
                         : "text-[#232839] hover:bg-[#f0f6ff]"
                     )}
-                    onClick={() => setMobileOpen(false)}
+                    aria-haspopup="true"
+                    aria-expanded={immigrationDropdownMobileOpen}
+                    onClick={() => setImmigrationDropdownMobileOpen(v => !v)}
+                    type="button"
                   >
                     {link.label}
-                  </Link>
-                ) : (
-                  <a
-                    href={link.to}
-                    className="block px-2 py-2 text-[#232839] hover:bg-[#f0f6ff] rounded"
-                  >
-                    {link.label}
-                  </a>
-                )}
-              </li>
-            ))}
-          </ul>
-           {/* Mobile Preferred Country Switcher */}
-           <div className="relative mb-4 mx-4">
+                    <FaChevronDown
+                      className={clsx(
+                        "ml-auto text-xs transition",
+                        immigrationDropdownMobileOpen && "rotate-180"
+                      )}
+                    />
+                  </button>
+                  {immigrationDropdownMobileOpen && (
+                    <ul className="bg-[#f5faff] border border-[#daeaff] rounded py-1 mt-1 ml-2 shadow z-10">
+                      {link.dropdown.map((item) => (
+                        <li key={item.label}>
+                          <Link
+                            to={item.to}
+                            className={clsx(
+                              "block px-4 py-2 text-sm rounded hover:bg-[#eaf3fd] transition",
+                              location.pathname === item.to
+                                ? "text-[#1d69f4] font-bold"
+                                : "text-[#232839]"
+                            )}
+                            onClick={() => {
+                              setImmigrationDropdownMobileOpen(false);
+                              setMobileOpen(false);
+                            }}
+                          >
+                            {item.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ) : (
+                <li key={link.label}>
+                  {link.to.startsWith("/") ? (
+                    <Link
+                      to={link.to}
+                      className={clsx(
+                        "block px-2 py-2 rounded text-base font-semibold",
+                        location.pathname === link.to
+                          ? "bg-[#e3eeff] text-[#1d69f4]"
+                          : "text-[#232839] hover:bg-[#f0f6ff]"
+                      )}
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.to}
+                      className="block px-2 py-2 text-[#232839] hover:bg-[#f0f6ff] rounded"
+                    >
+                      {link.label}
+                    </a>
+                  )}
+                </li>
+              )
+            )}
+
+            {/* Option Nav Link: Mobile dropdown */}
+            <li className="relative">
               <button
                 className={clsx(
-                  "flex items-center w-full gap-2 px-4 py-2 rounded-md border text-[#23386a] bg-white border-[#dbeafd] hover:bg-[#f1f6fb] font-medium shadow-sm transition",
-                  countryMenuOpen && "ring-2 ring-[#1d69f4]/20"
+                  "flex w-full items-center gap-1 px-2 py-2 rounded text-base font-semibold text-left",
+                  optionDropdownMobileOpen
+                    ? "bg-[#f0f6ff] text-[#1274d6]"
+                    : "text-[#232839] hover:bg-[#f0f6ff]"
                 )}
-                onClick={() => setCountryMenuOpen((v) => !v)}
-                aria-haspopup="listbox"
-                aria-expanded={countryMenuOpen}
-                aria-label="Select preferred country"
+                aria-haspopup="true"
+                aria-expanded={optionDropdownMobileOpen}
+                onClick={() => setOptionDropdownMobileOpen(v => !v)}
                 type="button"
               >
-                <span className="font-bold text-sm text-[#1d69f4]">
-                  {COUNTRY_OPTIONS.find(
-                    (opt) => opt.key === preferredCountry
-                  )?.label || "Select Country"}
-                </span>
-                <FaChevronDown className="ml-auto text-xs text-[#568edb]" />
+                Option
+                <FaChevronDown
+                  className={clsx(
+                    "ml-auto text-xs transition",
+                    optionDropdownMobileOpen && "rotate-180"
+                  )}
+                />
               </button>
-              {countryMenuOpen && (
-                <ul
-                  className="
+              {optionDropdownMobileOpen && (
+                <ul className="bg-[#f5faff] border border-[#daeaff] rounded py-1 mt-1 ml-2 shadow z-10 max-h-64 overflow-auto">
+                  {countryDropdownList.length === 0 ? (
+                    <li className="px-4 py-2 text-sm text-gray-400">No countries found</li>
+                  ) : (
+                    countryDropdownList.map((country) => (
+                      <li key={country.key}>
+                        <Link
+                          to={country.to}
+                          className="block w-full text-left px-4 py-2 text-sm rounded hover:bg-[#eaf3fd] transition text-[#232839]"
+                          onClick={() => {
+                            handleCountryOptionClick(country.to);
+                          }}
+                        >
+                          {country.label}
+                        </Link>
+                      </li>
+                    ))
+                  )}
+                </ul>
+              )}
+            </li>
+          </ul>
+          {/* Mobile Preferred Country Switcher */}
+          {/* <div className="relative mb-4 mx-4">
+            <button
+              className={clsx(
+                "flex items-center w-full gap-2 px-4 py-2 rounded-md border text-[#23386a] bg-white border-[#dbeafd] hover:bg-[#f1f6fb] font-medium shadow-sm transition",
+                countryMenuOpen && "ring-2 ring-[#1d69f4]/20"
+              )}
+              onClick={() => setCountryMenuOpen((v) => !v)}
+              aria-haspopup="listbox"
+              aria-expanded={countryMenuOpen}
+              aria-label="Select preferred country"
+              type="button"
+            >
+              <span className="font-bold text-sm text-[#1d69f4]">
+                {COUNTRY_OPTIONS.find(
+                  (opt) => opt.key === preferredCountry
+                )?.label || "Select Country"}
+              </span>
+              <FaChevronDown className="ml-auto text-xs text-[#568edb]" />
+            </button>
+            {countryMenuOpen && (
+              <ul
+                className="
                   absolute right-0 left-0 mt-2 min-w-[180px] rounded-md bg-white border border-[#cae0fa] shadow-xl z-50
                   py-2
-                  "
-                  role="listbox"
-                >
-                  {COUNTRY_OPTIONS.map((opt) => (
-                    <li
-                      key={opt.key}
-                      className={clsx(
-                        "px-4 py-2 hover:bg-[#eaf3fd] cursor-pointer text-sm font-medium",
-                        preferredCountry === opt.key
-                          ? "bg-[#e8f0fc] text-[#089166] font-bold"
-                          : ""
-                      )}
-                      role="option"
-                      aria-selected={preferredCountry === opt.key}
-                      onClick={() => {
-                        handleCountrySelect(opt.key);
-                        setMobileOpen(false);
-                      }}
-                    >
-                      {opt.label}
-                      {preferredCountry === opt.key && (
-                        <span className="ml-2 text-[#089166] font-bold">✓</span>
-                      )}
-                    </li>
-                  ))}
-                  <hr className="my-1 border-[#e9eff8]" />
+                "
+                role="listbox"
+              >
+                {COUNTRY_OPTIONS.map((opt) => (
                   <li
-                    className="px-4 py-2 text-xs text-[#ab2432] hover:bg-[#fee7ea] cursor-pointer"
+                    key={opt.key}
+                    className={clsx(
+                      "px-4 py-2 hover:bg-[#eaf3fd] cursor-pointer text-sm font-medium",
+                      preferredCountry === opt.key
+                        ? "bg-[#e8f0fc] text-[#089166] font-bold"
+                        : ""
+                    )}
                     role="option"
-                    aria-selected={preferredCountry === ""}
+                    aria-selected={preferredCountry === opt.key}
                     onClick={() => {
-                      handleCountrySelect("");
+                      handleCountrySelect(opt.key);
                       setMobileOpen(false);
                     }}
                   >
-                    Clear Selection
+                    {opt.label}
+                    {preferredCountry === opt.key && (
+                      <span className="ml-2 text-[#089166] font-bold">✓</span>
+                    )}
                   </li>
-                </ul>
-              )}
-            </div>
-            {/* Mobile "Get a Quote" button */}
-            <button
-              className="flex mx-4 items-center gap-2 bg-[#1d69f4] text-white rounded-full py-2 px-3 font-semibold shadow-lg hover:bg-[#255fd8] transition"
-              onClick={() => {
-                setMobileOpen(false);
-                setTimeout(() => {
-                  window.scrollTo({
-                    top: document.documentElement.scrollHeight,
-                    behavior: "smooth",
-                  });
-                }, 300);
-              }}
-            >
-              <span className="flex rounded-full w-8 h-8 bg-white/20 items-center justify-center">
-                <FaArrowRight className="text-white text-lg" />
-              </span>
-              <span>Get a quote</span>
-            </button>
-          <div className="flex flex-col gap-3 px-4 pb-6 mt-auto">
-           
-          </div>
+                ))}
+                <hr className="my-1 border-[#e9eff8]" />
+                <li
+                  className="px-4 py-2 text-xs text-[#ab2432] hover:bg-[#fee7ea] cursor-pointer"
+                  role="option"
+                  aria-selected={preferredCountry === ""}
+                  onClick={() => {
+                    handleCountrySelect("");
+                    setMobileOpen(false);
+                  }}
+                >
+                  Clear Selection
+                </li>
+              </ul>
+            )}
+          </div> */}
+          {/* Mobile "Get a Quote" button */}
+          <button
+            className="flex mx-4 items-center gap-2 bg-[#1d69f4] text-white rounded-full py-2 px-3 font-semibold shadow-lg hover:bg-[#255fd8] transition"
+            onClick={() => {
+              setMobileOpen(false);
+              setTimeout(() => {
+                window.scrollTo({
+                  top: document.documentElement.scrollHeight,
+                  behavior: "smooth",
+                });
+              }, 300);
+            }}
+          >
+            <span className="flex rounded-full w-8 h-8 bg-white/20 items-center justify-center">
+              <FaArrowRight className="text-white text-lg" />
+            </span>
+            <span>Get a quote</span>
+          </button>
+          <div className="flex flex-col gap-3 px-4 pb-6 mt-auto"></div>
         </div>
       </nav>
     </header>

@@ -1,0 +1,779 @@
+{
+    "countries": [
+      {
+        "id": "austria",
+        "name": "Austria",
+        "programs": [
+          {
+            "id": "austria-private-residence",
+            "name": "Residence for Private Purposes (Not for Gainful Activities)",
+            "tagline": "An annual quota of opportunity to become a permanent EU resident",
+            "description": "This program provides a direct path to permanent residency in Austria for those who are able to live there without the need of employment – with no investment required.",
+            "investmentRequired": false,
+            "minInvestment": null,
+            "currency": null,
+            "intro": "If you are a non-EU resident without the need of employment, and would like to reside there with your family, this is an option for you to seriously consider. Through this specific residency permit, individuals may become a resident in Austria along with their spouse and children under eighteen, with a route to permanent residency after five years.",
+            "benefits": [
+              "Visit Schengen states without the need of a visa",
+              "Move to Austria with spouse and children under eighteen",
+              "After five years, permanent residency can be applied for – allowing residence in any EU country",
+              "After ten years of residency, apply for Austrian citizenship",
+              "No investment required for this residency permit"
+            ],
+            "requirements": [
+              "Applicants must be of independent means and without need of employment – no right to work in Austria, including running your own business",
+              "Funds must be shown in an international bank account – amount varies depending on number of dependents",
+              "A University Degree – if not held, applicant must demonstrate basic German language skills within two years of arrival",
+              "Reside in Austria for at least 183 days per year",
+              "Health insurance providing full cover for each family member in Austria"
+            ],
+            "steps": [
+              {
+                "step": 1,
+                "title": "Submit Your Application",
+                "description": "Applications are subject to an annual quota. Applications are prepared for submission early each year to ensure the applicant secures their place."
+              },
+              {
+                "step": 2,
+                "title": "Residence Permit Issued",
+                "description": "With a successful application, your residency permit will initially be issued annually."
+              },
+              {
+                "step": 3,
+                "title": "Second Permit Renewal",
+                "description": "Within the first two years, applicants without a Bachelor's or Master's degree must demonstrate A1 level German language skills (excludes children under 14)."
+              },
+              {
+                "step": 4,
+                "title": "Permanent Residency",
+                "description": "After five years of residence, apply for permanent residency. Those without a degree must demonstrate German language level B1."
+              },
+              {
+                "step": 5,
+                "title": "Citizenship",
+                "description": "After ten years, apply to become an Austrian citizen."
+              }
+            ],
+            "timeline": {
+              "permanentResidencyYears": 5,
+              "citizenshipYears": 10
+            },
+            "familyEligible": true,
+            "dependents": "Spouse and children under 18"
+          }
+        ]
+      },
+      {
+        "id": "belgium",
+        "name": "Belgium",
+        "programs": [
+          {
+            "id": "belgium-entrepreneur",
+            "name": "Residency Through the Entrepreneur Program",
+            "tagline": "Business Start-Up Visa",
+            "description": "A residency pathway for entrepreneurs, business professionals, skilled individuals, and high net worth investors willing to invest in a local Belgian business.",
+            "investmentRequired": true,
+            "minInvestment": 300000,
+            "currency": "EUR",
+            "intro": null,
+            "eligibleApplicants": [
+              "Entrepreneurs",
+              "Experienced business professionals",
+              "Educated and skilled professionals",
+              "High net worth individuals willing and able to invest in a local Belgian business"
+            ],
+            "benefits": [
+              "Belgium provides a strong European presence",
+              "No minimum stay requirements per year",
+              "Only 3 years before citizenship application can be made",
+              "No restrictions on dual citizenship",
+              "Free travel across the Schengen Zone/EU without visa requirements"
+            ],
+            "requirements": [
+              "Minimum €300,000 available for the immigration program",
+              "Investment must be by means of monetary fund",
+              "Investment must be into a Belgian local business or project which creates jobs, or alternatively a start-up Belgian enterprise"
+            ],
+            "services": [
+              "Advice and assistance with the application from start to finish",
+              "Tax advice",
+              "Assistance dealing with necessary authorities",
+              "Bank account opening",
+              "Liaison with all local and government authorities",
+              "Submission of the application to the relevant government authorities",
+              "Advice and assistance when renewing your permit",
+              "Assistance with obtaining the permanent residence permit"
+            ],
+            "timeline": {
+              "citizenshipYears": 3
+            },
+            "dualCitizenshipAllowed": true,
+            "minimumStayRequired": false,
+            "familyEligible": true
+          }
+        ]
+      },
+      {
+        "id": "bulgaria",
+        "name": "Bulgaria",
+        "programs": [
+          {
+            "id": "bulgaria-property-investment",
+            "name": "Permanent Residency through Property Investment",
+            "tagline": "Investment-based permanent residency with a route to EU citizenship",
+            "description": "An investment-based opportunity for individuals who invest €300,000 in Bulgaria, qualifying for Permanent Residency via the Foreigners in the Republic of Bulgaria Act, Article 25 (August 2009), ratified by the EU.",
+            "investmentRequired": true,
+            "minInvestment": 300000,
+            "currency": "EUR",
+            "intro": "Permanent residency of Bulgaria is granted to citizens of any country (and their spouse and children under 18) who invest in the country through certain terms outlined in the Act. The key advantage is there is no obligation to reside in Bulgaria to obtain or retain Permanent Residency.",
+            "countryAdvantages": [
+              "Low income tax rate of 10%",
+              "Corporation tax rate of 10%",
+              "Access to skilled workers",
+              "Financially stable economy",
+              "Free trade environment within the EU"
+            ],
+            "keyFeatures": [
+              "Protected in Bulgarian legislation",
+              "Promoted and run by a leading Bulgarian law firm",
+              "Specialist scheme offering a secure route to permanent residency for you and your immediate family",
+              "Unique and structured path to take advantage of the legislation",
+              "You control your investment portfolio at all times"
+            ],
+            "benefits": [
+              "No requirement to live in Bulgaria to obtain permanent residency",
+              "Residency usually obtained in four to six months",
+              "Investment capital returned if application is not successful (guaranteed)",
+              "Property investment opportunity for capital growth and rental income",
+              "Guaranteed rental yield and significant VAT reclaim",
+              "Visa-free travel throughout the Schengen zone",
+              "Apply for a European Union passport after five years",
+              "Children under 18 years can be included in the application",
+              "Investment capital remains under your control",
+              "Access to European universities at EU rates",
+              "Low legal and application fees"
+            ],
+            "timeline": {
+              "residencyMonths": "4–6",
+              "euPassportYears": 5
+            },
+            "familyEligible": true,
+            "dependents": "Spouse and children under 18",
+            "residencyObligationRequired": false,
+            "note": "Bulgaria is set to gain a place within the Schengen zone shortly."
+          }
+        ]
+      },
+      {
+        "id": "cyprus",
+        "name": "Cyprus",
+        "programs": [
+          {
+            "id": "cyprus-residence-permit",
+            "name": "Residence Permit for Non-EU Citizens",
+            "tagline": "Property-based residency with a pathway to EU citizenship",
+            "description": "If you purchase a property in Cyprus, you may qualify for a Residence Permit, granting long-term residency with a pathway to Cypriot citizenship.",
+            "investmentRequired": true,
+            "minInvestment": 300000,
+            "currency": "EUR",
+            "benefits": [
+              "Pathway to permanent citizenship after seven years",
+              "No obligation to live in Cyprus – just return once every two years",
+              "Visa-free entry and residency in Cyprus",
+              "Freedom of movement within the Schengen zone",
+              "Permit extends to spouse, parents and financially dependent children",
+              "Tax liability in Cyprus is unaffected"
+            ],
+            "requirements": [
+              "A new property worth €300,000 or more",
+              "Payment of at least €200,000",
+              "Annual global income of €30,000 or more",
+              "Annual income of €5,000 for dependent children and €8,000 for parents",
+              "A minimum of €30,000 deposited in Cyprus for 3 years",
+              "No criminal record",
+              "Visit at least once every 2 years"
+            ],
+            "timeline": {
+              "approvalMonths": 2,
+              "citizenshipYears": 7,
+              "minimumResidencyForCitizenshipYears": 7,
+              "residencyWindowYears": 10
+            },
+            "familyEligible": true,
+            "dependents": "Spouse, parents, and financially dependent children"
+          },
+          {
+            "id": "cyprus-startup-visa",
+            "name": "Business Startup Visa",
+            "tagline": "Introduced in 2017 to encourage innovative businesses",
+            "description": "A visa scheme for non-EU startup founders looking to establish innovative businesses in Cyprus.",
+            "investmentRequired": true,
+            "minInvestment": 50000,
+            "currency": "EUR",
+            "visaTypes": [
+              "Individual startup visa (sole founder)",
+              "Group startup visa (founder and up to 4 senior executives)"
+            ],
+            "requirements": [
+              "Non-EU nationality",
+              "Start-up capital of €50,000 or more",
+              "An innovative business or business plan",
+              "Plans for a business HQ in Cyprus",
+              "Effective management in Cyprus",
+              "Tax residency in Cyprus",
+              "An undergraduate degree or equivalent",
+              "Fluency in either Greek or English"
+            ]
+          },
+          {
+            "id": "cyprus-citizenship-by-investment",
+            "name": "Citizenship & Passport by Investment",
+            "tagline": "One of only two EU nations offering citizenship by investment",
+            "description": "The Cypriot government's citizenship by investment scheme requiring a minimum €2 million investment.",
+            "investmentRequired": true,
+            "minInvestment": 2000000,
+            "currency": "EUR",
+            "eligibleInvestments": [
+              "Purchase or construction of buildings, infrastructure or land development projects",
+              "Alternative Investment Funds or other assets licensed by CySec",
+              "Purchase or creation of a Cypriot business",
+              "Participation in an existing Cypriot business",
+              "Purchasing government bonds (maximum €500,000 as proportion of total investment)",
+              "A combination of the above"
+            ],
+            "benefits": [
+              "Council of Ministers decision in only 3 months after receiving the application",
+              "No local tax obligation if staying less than 183 days per year in Cyprus",
+              "After citizenship, can purchase properties in any EU country",
+              "Visa-free travel to 157 countries",
+              "Minimum visit requirement of once every seven years",
+              "Investors can include children up to 28 years old if in full-time education",
+              "No language requirements"
+            ],
+            "requirements": [
+              "Minimum €2 million investment retained for at least three years",
+              "Purchase of a house in Cyprus worth at least €500,000 (plus VAT) if passing benefits to family",
+              "Benefits can be passed down to children, parents and other benefactors"
+            ],
+            "realEstateNotes": [
+              "Investors may sell properties after three years, keeping only one residence worth $500,000",
+              "May purchase one or more properties as long as total exceeds minimum investment requirement"
+            ],
+            "bankDepositNote": "The previous requirement of a $5 million fixed deposit in a Cypriot bank was abolished in September 2016.",
+            "businessRequirement": "If investing in a Cypriot business, it must be located within the Republic and employ at least 5 Cypriot citizens.",
+            "timeline": {
+              "processingMonths": 3
+            },
+            "familyEligible": true,
+            "languageRequired": false
+          },
+          {
+            "id": "cyprus-real-estate",
+            "name": "Real Estate Investment",
+            "tagline": "Apartments and villas in one of Europe's lifestyle and business capitals",
+            "description": "Investment opportunities in prime Cypriot apartments and villas, suitable for lifestyle, rental income, or qualifying for residency.",
+            "propertyTypes": [
+              {
+                "type": "Apartments",
+                "description": "Prime Cypriot apartments ideal for small-scale investment, one-man startups, or wealthy investors looking to enter the Cypriot market."
+              },
+              {
+                "type": "Villas",
+                "description": "Premium villas representing lifestyle and business investment opportunities, ideal for capitalising on the tourist and business boom."
+              }
+            ],
+            "note": "Property purchases for holiday purposes automatically entitle buyers to 180 days per year in Cyprus."
+          }
+        ]
+      },
+      {
+        "id": "czech-republic",
+        "name": "Czech Republic",
+        "programs": [
+          {
+            "id": "czech-residency-business",
+            "name": "Czech Residency through Business",
+            "tagline": "Long-term residency through company formation",
+            "description": "The Czech Republic government promotes businesses that contribute to employment and generate value for the economy. Full residency package including company formation through to long-term residency in under a year.",
+            "investmentRequired": false,
+            "minInvestment": null,
+            "currency": null,
+            "benefits": [
+              "Route to long-term residency permit after three months",
+              "Permanent EU residency after five years if requirements are met",
+              "Apply for citizenship after ten years of residence",
+              "Reside with dependents – spouse and children under eighteen"
+            ],
+            "steps": [
+              {
+                "step": 1,
+                "title": "Business Visa Application",
+                "description": "A business visa is required as the first step to enter the Czech Republic, valid for six months. Applied from the embassy in your country of residence."
+              },
+              {
+                "step": 2,
+                "title": "Enter Czech Republic and Register Address",
+                "description": "Within three days of arrival you must register your address with the local police."
+              },
+              {
+                "step": 3,
+                "title": "Apply for Long Term Residency",
+                "description": "Three months before your business visa expiry, apply for a long-term residency permit. Typically valid for one year with option to extend."
+              }
+            ],
+            "requirements": [
+              "Documentation proving your registered company in the Czech Republic",
+              "Proof of living expenses – salary from Czech company or evidence of funds in bank account",
+              "Health insurance at a minimum of €60,000",
+              "Accommodation organised and two months rental paid prior to visa application"
+            ],
+            "services": [
+              "Entire process handled by the team",
+              "Handling all documentation from business visa application form",
+              "Apartment booking in Czech Republic for two months in advance",
+              "Legal proof of address",
+              "Address registration",
+              "Long-term residency permit application"
+            ],
+            "timeline": {
+              "longTermResidencyMonths": 3,
+              "permanentResidencyYears": 5,
+              "citizenshipYears": 10
+            },
+            "familyEligible": true,
+            "dependents": "Spouse and children under 18"
+          }
+        ]
+      },
+      {
+        "id": "germany",
+        "name": "Germany",
+        "programs": [
+          {
+            "id": "germany-residency-business",
+            "name": "German Residence Through Business / Entrepreneurship",
+            "tagline": "Residency in the world's third largest economy through business",
+            "description": "Germany is the most widely spoken first language in the EU and the third largest economy in the world. German law is welcoming towards legitimate business activities and encourages local economic growth.",
+            "investmentRequired": false,
+            "minInvestment": null,
+            "currency": null,
+            "benefits": [
+              "Reside in Germany with spouse and children under eighteen",
+              "Eligible for Permanent Residency after three years",
+              "Apply for citizenship after eight years of residing in Germany"
+            ],
+            "qualificationCriteria": [
+              "Business must serve Germany's higher economic interest or a special regional need",
+              "Expectation that the business will have a positive effect on the economy",
+              "Financing secured through equity or bank loan",
+              "Business must not damage Germany's overall economic interests"
+            ],
+            "businessPlanNotes": "A business plan is mandatory when applying for a residency permit based on opening a business. The plan will be prepared by a specialist in Germany based on specific information provided by the applicant.",
+            "services": [
+              "Collecting documents according to checklist",
+              "Submitting all documents",
+              "Streamlining supplementary documents",
+              "Handling questions and explanations from authorities, if applicable",
+              "General advice and instruction during the application process"
+            ],
+            "timeline": {
+              "permanentResidencyYears": 3,
+              "citizenshipYears": 8
+            },
+            "familyEligible": true,
+            "dependents": "Spouse and children under 18"
+          },
+          {
+            "id": "germany-job-search",
+            "name": "German Residence to Search for a Job",
+            "tagline": "Six-month permit for qualified non-EU nationals to find employment",
+            "description": "Germany welcomes highly qualified people to live there and look for a job. Non-EU nationals holding an academic degree may live in Germany for six months to find employment.",
+            "investmentRequired": false,
+            "minInvestment": null,
+            "currency": null,
+            "requirements": [
+              "Job search permit must be applied for from the home country",
+              "Must provide evidence of a valid academic qualification",
+              "Must show evidence of sufficient funds to finance yourself for the next six months"
+            ],
+            "timeline": {
+              "permitDurationMonths": 6
+            },
+            "familyEligible": false
+          }
+        ]
+      },
+      {
+        "id": "hungary",
+        "name": "Hungary",
+        "programs": [
+          {
+            "id": "hungary-residency-business",
+            "name": "Hungarian Residency through Business",
+            "tagline": "Business-based residency with a path to permanent EU residency",
+            "description": "Residency permits in Hungary are available for paid activity, educational purposes, family reunification, medical treatment, accredited research, and voluntary work. Required for stays exceeding 90 days. Granted to non-EU individuals to promote business and entrepreneurship.",
+            "investmentRequired": false,
+            "minInvestment": null,
+            "currency": null,
+            "benefits": [
+              "Visa-free travel to other Schengen countries",
+              "No work permit required for the director/owner of a Hungarian company",
+              "Eligible for Permanent Residency after 3 years",
+              "Stay in Hungary with spouse and children under eighteen"
+            ],
+            "steps": [
+              {
+                "step": 1,
+                "title": "Incorporation",
+                "description": "Our team helps incorporate a company with Power of Attorney. Each company must have a Hungarian bank account."
+              },
+              {
+                "step": 2,
+                "title": "Business Plan",
+                "description": "A business plan is mandatory before the visa application is formulated."
+              },
+              {
+                "step": 3,
+                "title": "Housing Search",
+                "description": "Applicant needs a rented or purchased property for a resident address. Property viewings can be arranged if visiting Hungary, or lease secured via POA if not."
+              },
+              {
+                "step": 4,
+                "title": "Insurance",
+                "description": "Private health insurance with comprehensive coverage in Hungary is required. State insurance is also acceptable if employed at minimum wage within own company."
+              },
+              {
+                "step": 5,
+                "title": "Visa Application",
+                "description": "Apply for an entry visa in your country of citizenship or residence. Visa obtained within 30 days. First visa typically issued for 1 year, then renewable based on business progress."
+              },
+              {
+                "step": 6,
+                "title": "Local Registration upon Arrival",
+                "description": "Residency must be registered within 48 hours of arrival."
+              }
+            ],
+            "requirements": [
+              "Business plan",
+              "Accommodation",
+              "Health insurance",
+              "Director salary of at least €18,000 per annum with evidence of savings to support dependents",
+              "Must travel to Hungary within ten months of visa issuance",
+              "Local registration within 48 hours of arrival"
+            ],
+            "services": [
+              "Collating documents in line with the checklist",
+              "Handling all necessary official translations (at additional cost)",
+              "Compilation and submission of documents",
+              "Handling legal questions from authorities",
+              "Submission of outstanding/supplementary documentation",
+              "General advice and instruction during the application process",
+              "Personal representation in official matters, as permitted by law",
+              "Handling appeals (additional fees may apply)"
+            ],
+            "timeline": {
+              "permanentResidencyYears": 3,
+              "registrationOnArrivalHours": 48,
+              "travelToHungaryAfterVisaMonths": 10
+            },
+            "familyEligible": true,
+            "dependents": "Spouse and children under 18"
+          }
+        ]
+      },
+      {
+        "id": "norway",
+        "name": "Norway",
+        "programs": [
+          {
+            "id": "norway-self-employed",
+            "name": "Self-Employed Persons Visa",
+            "tagline": "Residency through business ownership in one of the world's wealthiest nations",
+            "description": "Norway is the second wealthiest nation and a popular destination for those looking to start up and expand businesses. This opportunity enables you to start and operate in an executive or managerial position in a company in Norway.",
+            "investmentRequired": false,
+            "minInvestment": null,
+            "currency": null,
+            "benefits": [
+              "Permit initially granted for one year",
+              "Permit is connected to the company – does not allow employment under any other means",
+              "Eligible to apply for permanent residency",
+              "Family members can also apply for residency alongside the main applicant"
+            ],
+            "requirements": [
+              "Business objective must be very clear",
+              "Running the business must be the sole reason for the stay in Norway",
+              "Must prove there is a financial basis for operating the business",
+              "Must provide a business plan"
+            ],
+            "services": [
+              "Managing the process end-to-end",
+              "Counselling and consultation at each step",
+              "Tracking the progress of the application",
+              "Tax planning",
+              "Legal assistance"
+            ],
+            "timeline": {
+              "initialPermitYears": 1
+            },
+            "familyEligible": true
+          }
+        ]
+      },
+      {
+        "id": "portugal",
+        "name": "Portugal",
+        "programs": [
+          {
+            "id": "portugal-golden-visa",
+            "name": "Portugal's Golden Visa",
+            "tagline": "Fast-track residency for investors in one of Europe's most emerging markets",
+            "description": "Portugal's Golden Visa is a fast-track option for investors to obtain a residency permit in Portugal, enabling visa-free travel in 26 European Schengen zone countries.",
+            "investmentRequired": true,
+            "currency": "EUR",
+            "benefits": [
+              "Minimum residence of only 7 days in the first year and 14 days in successive years",
+              "Permanent Residency eligibility after five years",
+              "Citizenship eligibility after six years"
+            ],
+            "qualifyingInvestments": [
+              {
+                "type": "Capital Investment – Shares or Business",
+                "minAmount": 1000000,
+                "currency": "EUR",
+                "description": "Minimum capital investment of €1 million in shares or a business"
+              },
+              {
+                "type": "Scientific Research",
+                "minAmount": 350000,
+                "currency": "USD",
+                "description": "Minimum capital investment of $350,000 when funding scientific research activities"
+              },
+              {
+                "type": "Arts & Culture",
+                "minAmount": 250000,
+                "currency": "EUR",
+                "description": "Minimum capital investment of €250,000 when funding arts and culture"
+              },
+              {
+                "type": "Property – Urban Renewal Designated Areas",
+                "minAmount": 350000,
+                "currency": "EUR",
+                "description": "Reduced minimum for those investing in designated areas of urban renewal"
+              },
+              {
+                "type": "Property – Any Location",
+                "minAmount": 500000,
+                "currency": "USD",
+                "description": "Minimum investment of $500,000 for any property in any location. Must prove investment with a property deed or promissory agreement and valid Land Registry certificate."
+              },
+              {
+                "type": "Employment Creation",
+                "minAmount": null,
+                "currency": null,
+                "description": "Creation of 30 local jobs in any area for all types of businesses. No minimum investment required. All employees must be registered with Social Security."
+              }
+            ],
+            "timeline": {
+              "permanentResidencyYears": 5,
+              "citizenshipYears": 6,
+              "minResidencyDaysYear1": 7,
+              "minResidencyDaysSubsequentYears": 14
+            },
+            "familyEligible": true
+          }
+        ]
+      },
+      {
+        "id": "spain",
+        "name": "Spain",
+        "programs": [
+          {
+            "id": "spain-golden-visa",
+            "name": "Spain – Residence through Investment (Golden Visa)",
+            "tagline": "Residency, EU freedom, and real estate opportunities for non-EU investors",
+            "description": "Spain's Investment Visa (Golden Visa) was launched to attract entrepreneurs and foreign investors, enabling non-EU nationals to attain qualified residency permits in return for investing in Spanish real estate, companies, or bonds.",
+            "investmentRequired": true,
+            "minInvestment": 500000,
+            "currency": "EUR",
+            "benefits": [
+              "No minimum stay requirement to renew visa",
+              "Property can be rented for income",
+              "Joint buyers can combine investments into one property",
+              "Free movement within the 26 countries of the Schengen zone",
+              "Residence visas may be issued to spouse, non-married partners and children up to 18 years",
+              "Visa initially granted for 1 year"
+            ],
+            "eligibilityCriteria": [
+              "Minimum investment of €500,000 (may be spread over multiple properties, total must reach minimum)",
+              "No criminal record",
+              "Medical insurance",
+              "Sufficient economic means to cover any stay in Spain",
+              "Must not have previously been refused visa or entry into the Schengen zone"
+            ],
+            "timeline": {
+              "initialVisaYears": 1
+            },
+            "familyEligible": true,
+            "dependents": "Spouse, non-married partners, and children up to 18"
+          }
+        ]
+      },
+      {
+        "id": "switzerland",
+        "name": "Switzerland",
+        "programs": [
+          {
+            "id": "switzerland-investor-visa",
+            "name": "Swiss Investor Visa",
+            "tagline": "Permanent Residency in Switzerland through company investment",
+            "description": "Gain permanent residency in Switzerland through investing in a Swiss company.",
+            "investmentRequired": true,
+            "minInvestment": 500000,
+            "currency": "CHF",
+            "minInvestmentEURApprox": 420000,
+            "eligibleApplicants": [
+              "People who are selling an existing company",
+              "Businessmen not currently trading in Switzerland",
+              "Retirees",
+              "Actors, musicians, and sportsmen",
+              "People able to live on their assets and who do not require employment"
+            ],
+            "benefits": [
+              "Very friendly tax system",
+              "Central European location",
+              "Highest quality of living in the world"
+            ],
+            "eligibilityCriteria": [
+              "Minimum investment of 500,000 CHF (approx. €420,000) into a company in the area where you will reside, with a view to creating jobs – investment into stocks and shares is not sufficient",
+              "Should reside in Switzerland for the majority of the time",
+              "Must demonstrate ties with Switzerland (e.g. past holidays, friends, relatives), unless a famous artist"
+            ],
+            "familyEligible": false
+          }
+        ]
+      },
+      {
+        "id": "united-kingdom",
+        "name": "United Kingdom",
+        "programs": [
+          {
+            "id": "uk-entrepreneur-visa",
+            "name": "UK Entrepreneur Visa (Tier 1)",
+            "tagline": "Start or invest in a UK business for a route to permanent residency",
+            "description": "Non-EU citizens have the option of investing £200,000 for the Tier 1 Entrepreneur Visa, enabling them to start a business or invest in an existing business in the UK.",
+            "investmentRequired": true,
+            "minInvestment": 200000,
+            "currency": "GBP",
+            "eligibility": "Application can be made by either one non-EU entrepreneur or an entrepreneurial team of two business partners.",
+            "eligibilityCriteria": [
+              "Must invest £200,000 directly into a UK company",
+              "During first three years, must employ two additional full-time staff for at least 12 months each",
+              "Must demonstrate £200,000 available to invest plus sufficient funds to support self and dependents",
+              "Must demonstrate proficiency in English",
+              "Validation of source of funds is mandatory",
+              "Minimum age of 18 years"
+            ],
+            "benefits": [
+              "Visa can be granted in a few weeks",
+              "Eligibility to permanent residence after five years",
+              "Citizenship eligibility after six years if criteria continue to be met"
+            ],
+            "services": [
+              "Immigration services for the entrepreneur and their dependents",
+              "UK company formation and tax authority registration",
+              "Introduction of existing businesses seeking investment"
+            ],
+            "timeline": {
+              "permanentResidencyYears": 5,
+              "citizenshipYears": 6,
+              "visaGrantedWeeks": "a few weeks"
+            },
+            "familyEligible": true
+          },
+          {
+            "id": "uk-investor-visa",
+            "name": "UK Investor Visa (Tier 1)",
+            "tagline": "A direct route to permanent residency for high-net-worth investors",
+            "description": "The Tier 1 Investor Visa provides an investor with a direct route to permanent residency and citizenship for themselves and their immediate family.",
+            "investmentRequired": true,
+            "minInvestment": 2000000,
+            "currency": "GBP",
+            "requirements": [
+              "Minimum investment of £2 million GBP into a UK business"
+            ],
+            "familyEligible": true
+          },
+          {
+            "id": "uk-student-visa",
+            "name": "Tier 4 Student Visa",
+            "tagline": "Study in the UK on an approved higher education course",
+            "description": "The UK study visa is available to non-EU citizens looking to study on an approved higher education course.",
+            "investmentRequired": false,
+            "minInvestment": null,
+            "currency": null,
+            "requirements": [
+              "Offer letter from an approved educational institute"
+            ],
+            "familyEligible": false
+          },
+          {
+            "id": "uk-property",
+            "name": "UK Property Investment",
+            "tagline": "Expert guidance for investing in UK real estate",
+            "description": "With a large range of options available to invest in UK real estate, our legal experts provide the right guidance to move forward, including introductions to credible UK realtors and legal assistance.",
+            "investmentRequired": true,
+            "minInvestment": null,
+            "currency": "GBP",
+            "services": [
+              "Introduction to credible UK realtors",
+              "Legal assistance throughout the purchase process",
+              "Guidance through legal work and negotiations"
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": "dubai",
+        "name": "Dubai",
+        "programs": [
+          {
+            "id": "dubai-golden-visa",
+            "name": "Dubai Golden Visa",
+            "tagline": "Long-term residency for global investors, entrepreneurs, and talented individuals",
+            "description": "The Dubai Golden Visa offers long-term residency (5 or 10 years) to investors, entrepreneurs, professionals, scientists, and talented individuals in various fields, allowing them to live, work, and study in the UAE with 100% business ownership.",
+            "investmentRequired": true,
+            "minInvestment": 2000000,
+            "currency": "AED",
+            "benefits": [
+              "Long-term residency options: 5- or 10-year visas",
+              "No local sponsor required",
+              "100% foreign business ownership",
+              "Family can be sponsored (spouse, children, domestic helpers)",
+              "Multiple entries permitted for application",
+              "Ability to stay outside the UAE without visa annulment",
+              "Access to world-class amenities and infrastructure"
+            ],
+            "requirements": [
+              "Real estate investment of AED 2 million or more OR",
+              "Public investments (deposit, company shares, or investment funds) of AED 2 million or more OR",
+              "Entrepreneurs: Own a company with minimum AED 500,000 capital or approval for a startup by a UAE recognized business incubator",
+              "Special categories: Outstanding students, scientists, doctors, creatives may also qualify"
+            ],
+            "services": [
+              "Application preparation and review",
+              "Government liaison and paperwork support",
+              "On-the-ground guidance in Dubai",
+              "Family and dependent visa processing"
+            ],
+            "timeline": {
+              "visaYears": [5, 10],
+              "processingWeeks": 2
+            },
+            "familyEligible": true,
+            "dependents": "Spouse, children (any age if unmarried), and domestic helpers"
+          }
+        ]
+      }
+    ]
+  }
