@@ -204,32 +204,32 @@ const SERVICES_CONTENT = {
     {
       id: "01",
       title: "Initial Consultation & Due Diligence",
-      image: "/consult1.webp",
+      image: "/WhatWeOffer/InitialConsultationDueDiligence.png",
     },
     {
       id: "02",
       title: "Business & Investment Guidance",
-      image: "/consult2.webp",
+      image: "/WhatWeOffer/BusinessInvestmentGuidance.png",
     },
     {
       id: "03",
       title: "Visa & Immigration Assistance",
-      image: "/consult3.webp",
+      image: "/WhatWeOffer/VisaImmigrationAssistance.jpg",
     },
     {
       id: "04",
       title: "Full Documentation Support",
-      image: "/consult4.webp",
+      image: "/WhatWeOffer/FullDocumentationSupport.png",
     },
     {
       id: "05",
       title: "Ongoing Compliance & Reporting",
-      image: "/consult5.webp",
+      image: "/WhatWeOffer/OngoingComplianceReporting.png",
     },
     {
       id: "06",
       title: "Legal, PRO, and Settlement Services",
-      image: "/consult6.webp",
+      image: "/WhatWeOffer/LegalPROandSettlementServices.png",
     },
   ],
 };
@@ -260,14 +260,14 @@ export default function AlternateCards() {
           {content.subheading}
         </p>
       </div>
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 ">
         {cards.map((card, index) => {
           const isReversed = index % 2 !== 0;
 
           return (
             <div
               key={card.id}
-              className={`grid grid-cols-1 md:grid-cols-2 mx-auto items-stretch overflow-hidden rounded-2xl shadow-xl ${
+              className={`grid grid-cols-1 md:grid-cols-2 mx-auto items-stretch overflow-hidden  rounded-2xl shadow-xl max-h-72 ${
                 isReversed ? "md:grid-flow-dense" : ""
               }`}
             >

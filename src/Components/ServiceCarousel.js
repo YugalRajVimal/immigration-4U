@@ -231,42 +231,42 @@ const SERVICES_CONTENT = {
       subtitle: "Start, Invest, or Expand Globally",
       description:
         "Whether launching a new venture, expanding, or making a qualifying investment, we streamline the legal and regulatory process for company formation and investment across major international locations.",
-      image: "/consult1.webp",
+      image: "/WhatWeOffer/businesssetupandinvestmentguidence.jpg",
     },
     {
       title: "Visa & Immigration Services",
       subtitle: "Your Global Mobility Partner",
       description:
         "Comprehensive visa and residency services for entrepreneurs, professionals, and families—let our experts handle every step from eligibility to approval, ensuring a smooth relocation experience worldwide.",
-      image: "/consult2.webp",
+      image: "/WhatWeOffer/visaimmigrationservices.jpg",
     },
     {
       title: "Compliance, Tax, & Legal Support",
       subtitle: "Regulation, Reporting, and Risk Management",
       description:
         "Stay compliant with international and local business regulations, tax rules, and economic substance requirements. We provide end-to-end support for auditing, accounting, tax structuring, and ongoing corporate compliance.",
-      image: "/consult3.webp",
+      image: "/WhatWeOffer/ComplianceAndLegalSupport.jpg",
     },
     {
       title: "Document Preparation & PRO Services",
       subtitle: "Seamless Paperwork, Every Time",
       description:
         "Efficient documentation, translation, and government liaison services (PRO), including due diligence and document clearing for all business or residency needs.",
-      image: "/consult4.webp",
+      image: "/WhatWeOffer/documentpreparation.jpg",
     },
     {
       title: "Family, Partner, & Dependent Visas",
       subtitle: "Bringing Loved Ones Together",
       description:
         "Dedicated assistance with spousal, partner, child, and dependent visa services. We help reunify families and support pathways to permanent residency or citizenship in your destination country.",
-      image: "/consult5.webp",
+      image: "/WhatWeOffer/dependentvisas.jpg",
     },
     {
       title: "Settlement & Post-Approval Support",
       subtitle: "From Arrival to Integration",
       description:
         "Ongoing support after approval—activate IDs, finalize residency, fulfill local requirements, and integrate into your new home or business ecosystem with confidence.",
-      image: "/consult6.webp",
+      image: "/WhatWeOffer/Support.jpg",
     },
   ],
 };
