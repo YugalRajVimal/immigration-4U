@@ -59,10 +59,10 @@ const App = () => {
                   element={<EmploymentPage />}
                 />
 
-{/* <Route
+<Route
                   path="/temp"
                   element={<EmailChunker />}
-                /> */}
+                />
 
 <Route
   path="/country/:country"
